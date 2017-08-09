@@ -35,11 +35,7 @@ GPIO_B = 19
 
 # The pin that the knob's button is hooked up to. If you have no button, set
 # this to None.
-<<<<<<< HEAD
-GPIO_BUTTON = 13 
-=======
 GPIO_BUTTON = None 
->>>>>>> ab899b53b4b2c667e551770bbb87da5a689c45b5
 
 # The minimum and maximum volumes, as percentages.
 #
@@ -47,11 +43,7 @@ GPIO_BUTTON = None
 # greater than zero because if your system is like mine, sound gets
 # completely inaudible _long_ before 0%. If you've got a hardware amp or
 # serious speakers or something, your results will vary.
-<<<<<<< HEAD
-VOLUME_MIN = 30
-=======
-VOLUME_MIN = 15
->>>>>>> ab899b53b4b2c667e551770bbb87da5a689c45b5
+VOLUME_MIN = 20
 VOLUME_MAX = 96
 
 # The amount you want one click of the knob to increase or decrease the
@@ -334,8 +326,4 @@ if __name__ == "__main__":
     # timeout, then Ctrl-C works as intended. No idea why.
     EVENT.wait(1200)
     consume_queue()
-<<<<<<< HEAD
     EVENT.clear()
-=======
-    EVENT.clear()
->>>>>>> ab899b53b4b2c667e551770bbb87da5a689c45b5
