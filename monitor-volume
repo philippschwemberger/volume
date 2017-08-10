@@ -43,7 +43,7 @@ GPIO_BUTTON = None
 # greater than zero because if your system is like mine, sound gets
 # completely inaudible _long_ before 0%. If you've got a hardware amp or
 # serious speakers or something, your results will vary.
-VOLUME_MIN = 6
+VOLUME_MIN = 0
 VOLUME_MAX = 96
 
 # The amount you want one click of the knob to increase or decrease the
