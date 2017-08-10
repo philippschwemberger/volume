@@ -185,7 +185,7 @@ class Volume:
     Sets volume to a specific value.
     """
     self.volume = self._constrain(v)
-    output = self.amixer("set 'PCM' unmute {}%".format(v))
+    output = self.amixer("set 'Master' unmute {}%".format(v))
     self._sync(output)
     return self.volume
     
@@ -194,12 +194,12 @@ class Volume:
     Toggles muting between on and off.
     """
     if self.is_muted:
-      output = self.amixer("set 'PCM' unmute")
+      output = self.amixer("set 'Master' unmute")
     else:
       # We're about to mute ourselves, so we should remember the last volume
       # value we had because we'll want to restore it later.
       self.last_volume = self.volume
-      output = self.amixer("set 'PCM' mute")
+      output = self.amixer("set 'Master' mute")
   
     self._sync(output)
     if not self.is_muted:
@@ -220,7 +220,7 @@ class Volume:
   # string scanning and not regular expressions.
   def _sync(self, output=None):
     if output is None:
-      output = self.amixer("get 'PCM'")
+      output = self.amixer("get 'Master'")
       
     lines = output.readlines()
     if DEBUG:
